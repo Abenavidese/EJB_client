@@ -1,6 +1,7 @@
 package ups.edu.ejb.clientee;
 
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -41,6 +42,11 @@ public class Main {
         // Registrar el producto a través del EJB remoto
         productoRegistration.register(producto);
         System.out.println("Producto registrado: " + nombre);
+    }
+
+    public List<Producto> listarProductos() throws Exception {
+        // Llama al método remoto para listar productos
+        return productoRegistration.listarProductos();
     }
 
     public static void main(String[] args) {
